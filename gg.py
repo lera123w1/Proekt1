@@ -9,12 +9,12 @@ height = 1000
 
 # Загрузка фотографии место (где будет происходить)
 
-background_image = pygame.image.load("assets\\images\\Gost.jpg")
+background_image = pygame.image.load("photo\\mesto.jpg")
 background_image = pygame.transform.scale(background_image, (width, height))
  
 # Загрузка призрака изображений 
 
-ghost_image = pygame.image.load("assets\\images\\Prizrak.jpg")
+ghost_image = pygame.image.load("photo\\Prizrak.jpg")
 
 
 display = pygame.display.set_mode((width, height))
@@ -40,3 +40,14 @@ purple = (155, 89, 182)
 orange = (243, 156, 18)
  
 font = pygame.font.SysFont("Arial", 25)
+
+# Загрузка музыки 
+pygame.mixer.music.load("Effects\\effekt-quotprivideniyaquot-28433.mp3")
+pygame.mixer.music.play(-1)
+ 
+# Страшные звуки в игре (место где будет это происходить)
+burst_sound = pygame.mixer.Sound("Effects\\prizrak-byistro-proletel.mp3")
+ 
+# Шрифт
+instruction_font = pygame.font.Font(None, 30)
+heading_font = pygame.font.Font(None, 50)
