@@ -62,3 +62,24 @@ def instructions():
         "",
         "Нажмите в любом месте,чтобы начать игру"
     ]
+    y_offset = 50
+    for line in instruction_text:
+        text = instruction_font.render(line, True, white)
+        text_rect = text.get_rect(center=(width/2, y_offset))
+        display.blit(text, text_rect)
+        y_offset += 40
+ 
+    pygame.display.update()
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                waiting = False
+
+def show_prompt():
+    text = font.render("Вы желаете продолжить? (Y/N)", True, (255, 255, 255))
+    display.blit(text, (50, 50))
+    pygame.display.flip()
